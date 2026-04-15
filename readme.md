@@ -11,14 +11,9 @@ A MegaStore identificou que sistemas de busca tradicionais (lineares) são lento
 ## ✨ Funcionalidades
 - **Estrutura de Grafo:** Representação de dados através de Nós (Produtos/Categorias) e Arestas (Conexões).
 - **Busca por Nome:** Localização instantânea de itens no catálogo.
-- **Recomendações Inteligentes:** Ao buscar um produto, o motor sugere automaticamente itens conectados no grafo (ex: buscar um Celular recomenda Carregadores e a Categoria de Eletrônicos).
+- **Recomendações Inteligentes:** Ao buscar um produto, o motor sugere automaticamente itens conectados no grafo.
 - **Persistência Binária:** O catálogo é salvo em um arquivo `.bin` (formato Bincode), garantindo carregamento ultrarrápido.
 - **CLI Interativo:** Interface via terminal simples e intuitiva.
-
-## 🛠️ Tecnologias Utilizadas
-- **Linguagem:** [Rust](https://www.rust-lang.org/) (Edição 2024).
-- **Serialização:** [Serde](https://serde.rs/) & [Bincode](https://github.com/bincode-org/bincode).
-- **Estrutura de Dados:** Grafos (Lista de Adjacência).
 
 ## 📂 Estrutura do Projeto
 ```text
@@ -48,7 +43,13 @@ A MegaStore identificou que sistemas de busca tradicionais (lineares) são lento
    cargo run
    ```
 
-3. No terminal, digite o nome de um produto (ex: `Samsung`, `iPhone`, `Sony`) para ver a busca e as recomendações em ação. Digite `sair` para encerrar.
+### 🔍 O que pesquisar? (Exemplos do Catálogo)
+O sistema vem com um catálogo inicial para testes. Tente buscar por:
+- **`Samsung`**: Encontra o Smartphone Samsung e recomenda o Carregador e a Categoria Eletrônicos.
+- **`iPhone`**: Encontra o iPhone e recomenda o Carregador e a Categoria Eletrônicos.
+- **`Sony`** ou **`Fone`**: Encontra o Fone Bluetooth e recomenda os Smartphones e a Categoria.
+- **`Eletrônicos`**: Encontra a categoria e lista todos os produtos conectados a ela.
+- **`Carregador`**: Encontra o acessório e recomenda os modelos de Smartphone compatíveis.
 
 ## 🧠 Conceitos Aplicados (Acadêmico)
 - **Vértices (Nós):** Cada produto ou categoria é um vértice no grafo.
